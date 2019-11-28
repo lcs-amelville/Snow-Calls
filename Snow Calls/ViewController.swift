@@ -52,6 +52,9 @@ class ViewController: UIViewController {
             
             
                 switch character {
+                case "0":
+                    outputPhoneNumber += "0"
+                    
                 case "1":
                     outputPhoneNumber += "1"
                     
