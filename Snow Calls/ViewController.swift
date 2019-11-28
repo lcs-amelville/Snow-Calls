@@ -12,23 +12,23 @@ class ViewController: UIViewController {
     
     
     //Outlets
+    @IBOutlet weak var inputText: UITextView!
     
-    @IBOutlet weak var insertNumberTextView: UITextView!
-    
-    @IBOutlet weak var outputTextView: UITextView!
+    @IBOutlet weak var outputText: UITextView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    
     
     @IBAction func findPhoneNumberButton(_ sender: Any) {
         
-        guard let insertNumber = insertNumberTextView.text, insertNumber.count > 0 else {
-            outputTextView.text = "Please Enter a Phone Number"
+        
+        guard let givenNumber = inputText.text, givenNumber.count > 0 else {
+            outputText.text = "Please Enter a Phone Number"
             return
         }
         
@@ -43,34 +43,51 @@ class ViewController: UIViewController {
         //var numberNine = 0
         //var numberTen = 0
         
-        var phoneNumber = ""
+        var outputPhoneNumber = ""
         
-        for character in insertNumber {
-        
-        switch insertNumber {
-        case "A","B","C","2":
-            phoneNumber += "2"
-        case "D","E","F","3":
-            phoneNumber += "3"
-        case "G","H","I","4":
-            phoneNumber += "4"
-        case "J","K","L","5":
-            phoneNumber += "5"
-        case "M","N","O","6":
-            phoneNumber += "6"
-        case "P","Q","R","S","7":
-            phoneNumber += "7"
-        case "T","U","V","8":
-            phoneNumber += "8"
-        case "W","X","Y","Z","9":
-            phoneNumber += "9"
-        default:
-            phoneNumber += "1"
+        for character in givenNumber {
+            
+                switch character {
+                case "1":
+                    outputPhoneNumber += "1"
+                    
+                case "A","B","C","2":
+                    outputPhoneNumber += "2"
+                    
+                case "D","E","F","3":
+                    outputPhoneNumber += "3"
+                    
+                case "G","H","I","4":
+                    outputPhoneNumber += "4"
+                    
+                case "J","K","L","5":
+                    outputPhoneNumber += "5"
+                    
+                case "M","N","O","6":
+                    outputPhoneNumber += "6"
+                    
+                case "P","Q","R","S","7":
+                    outputPhoneNumber += "7"
+                    
+                case "T","U","V","8":
+                    outputPhoneNumber += "8"
+                    
+                case "W","X","Y","Z","9":
+                    outputPhoneNumber += "9"
+                    
+                default:
+                    outputPhoneNumber += ""
+                }
+                
+                if outputPhoneNumber.count == 3 || outputPhoneNumber.count == 7{
+                    outputPhoneNumber += "-"
+                }
+            
+            
         }
-    
-        }
         
-        outputTextView.text = (phoneNumber)
+        
+        outputText.text = outputPhoneNumber
         
         
     }
