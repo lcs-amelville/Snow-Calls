@@ -32,69 +32,80 @@ class ViewController: UIViewController {
             return
         }
         
-        //var numberOne = 0
-        //var numberTwo = 0
-        //var numberThree = 0
-        //var numberFour = 0
-        //var numberFive = 0
-        //var numberSix = 0
-        //var numberSeven = 0
-        //var numberEight = 0
-        //var numberNine = 0
-        //var numberTen = 0
+        //guard let givenNumberTotal = inputText.text, givenNumberTotal.count > 12  else {
+        //   outputText.text = "Please Enter a Full Phone Number"
+        //  return
+        // }
+    
         
-        var outputPhoneNumber = ""
         
-        for character in givenNumber {
+        // breaking up the entire input string into individual lines based on the \n newline character
+        let lines = givenNumber.split(separator:"\n")
+        
+        // loop over each line in the input lines
+        for line in lines {
             
-            if outputPhoneNumber.count < 12  {
+            // reset the output phone number
+            var outputPhoneNumber = ""
+            
+            // loop over each character in the current line
+            for character in line {
                 
-            
-            
-                switch character {
-                case "0":
-                    outputPhoneNumber += "0"
+                if outputPhoneNumber.count < 12  {
                     
-                case "1":
-                    outputPhoneNumber += "1"
                     
-                case "A","B","C","2":
-                    outputPhoneNumber += "2"
                     
-                case "D","E","F","3":
-                    outputPhoneNumber += "3"
+                    switch character {
+                    case "0":
+                        outputPhoneNumber += "0"
+                        
+                    case "1":
+                        outputPhoneNumber += "1"
+                        
+                    case "A","B","C","2":
+                        outputPhoneNumber += "2"
+                        
+                    case "D","E","F","3":
+                        outputPhoneNumber += "3"
+                        
+                    case "G","H","I","4":
+                        outputPhoneNumber += "4"
+                        
+                    case "J","K","L","5":
+                        outputPhoneNumber += "5"
+                        
+                    case "M","N","O","6":
+                        outputPhoneNumber += "6"
+                        
+                    case "P","Q","R","S","7":
+                        outputPhoneNumber += "7"
+                        
+                    case "T","U","V","8":
+                        outputPhoneNumber += "8"
+                        
+                    case "W","X","Y","Z","9":
+                        outputPhoneNumber += "9"
+                        
+                    default:
+                        outputPhoneNumber += ""
+                    }
                     
-                case "G","H","I","4":
-                    outputPhoneNumber += "4"
-                    
-                case "J","K","L","5":
-                    outputPhoneNumber += "5"
-                    
-                case "M","N","O","6":
-                    outputPhoneNumber += "6"
-                    
-                case "P","Q","R","S","7":
-                    outputPhoneNumber += "7"
-                    
-                case "T","U","V","8":
-                    outputPhoneNumber += "8"
-                    
-                case "W","X","Y","Z","9":
-                    outputPhoneNumber += "9"
-                    
-                default:
-                    outputPhoneNumber += ""
+                    if outputPhoneNumber.count == 3 || outputPhoneNumber.count == 7{
+                        outputPhoneNumber += "-"
+                    }
                 }
                 
-                if outputPhoneNumber.count == 3 || outputPhoneNumber.count == 7{
-                    outputPhoneNumber += "-"
-                }
             }
+            outputText.text = outputPhoneNumber
             
         }
         
         
-        outputText.text = outputPhoneNumber
+        
+        
+        
+        
+        
         
         
     }
