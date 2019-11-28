@@ -47,6 +47,10 @@ class ViewController: UIViewController {
         
         for character in givenNumber {
             
+            if outputPhoneNumber.count < 12  {
+                
+            
+            
                 switch character {
                 case "1":
                     outputPhoneNumber += "1"
@@ -82,7 +86,7 @@ class ViewController: UIViewController {
                 if outputPhoneNumber.count == 3 || outputPhoneNumber.count == 7{
                     outputPhoneNumber += "-"
                 }
-            
+            }
             
         }
         
