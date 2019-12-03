@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class ViewController: UIViewController {
+//                      Promise t mplement certain metods on this class, or, also, can mean some fuctionality is now made available to us
+class ViewController: UIViewController, UITextViewDelegate {
     
     
     //Outlets
@@ -17,9 +17,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var outputText: UITextView!
     
     
+    // This method runs ONCE after the view first loads
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // Make this class be the delegate for the input text field
+        inputText.delegate = self
+        
     }
     
     
@@ -116,8 +121,14 @@ class ViewController: UIViewController {
     
     
     
+    // Mark we are now adding UItextviewDelegate Methods
     
-    
+    // Called automaticlly when the contents of the text view are changed
+    func textViewDidChange(_ textView: UITextView) {
+        
+        // Reset the output text view
+        outputText.text = ""
+    }
     
     
     
