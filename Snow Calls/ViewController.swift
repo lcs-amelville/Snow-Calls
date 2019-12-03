@@ -25,6 +25,11 @@ class ViewController: UIViewController, UITextViewDelegate {
         // Make this class be the delegate for the input text field
         inputText.delegate = self
         
+        
+        // Give the focus to the input text view
+        inputText.text = ""
+        outputText.text = ""
+        inputText.becomeFirstResponder()
     }
     
     
