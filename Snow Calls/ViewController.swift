@@ -97,10 +97,10 @@ class ViewController: UIViewController {
                     //BREAK LOOP
                     break
                 }
-                outputText.text = outputPhoneNumber + "\n"
+                
             }
-            
-            
+            //Set the output phone number
+            outputText.text += outputPhoneNumber + "\n"
         }
         
         
